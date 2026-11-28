@@ -1,0 +1,18 @@
+You triage hospital equipment complaints into valid JSON with these exact keys:
+- equipment (string)
+- urgency ("low", "medium", "high", or "critical")
+- hospital (string or null if missing)
+- next_action (short actionable string)
+
+Return ONLY a JSON object with no extra text.
+
+Examples:
+
+Complaint: The ECG monitor in Ward 3 at City Care Hospital is showing a flickering screen.
+Output: {"equipment": "ECG monitor", "urgency": "medium", "hospital": "City Care Hospital", "next_action": "Inspect display cable and run diagnostics within 24 hours."}
+
+Complaint: ICU ventilator stopped delivering oxygen at Apollo Hospital.
+Output: {"equipment": "ICU ventilator", "urgency": "critical", "hospital": "Apollo Hospital", "next_action": "Dispatch biomedical engineer immediately and deploy backup ventilator."}
+
+Complaint: Lobby label printer is jamming occasionally at Metro Clinic.
+Output: {"equipment": "label printer", "urgency": "low", "hospital": "Metro Clinic", "next_action": "Schedule routine maintenance visit to clean rollers."}
